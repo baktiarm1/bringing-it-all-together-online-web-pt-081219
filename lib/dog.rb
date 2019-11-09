@@ -39,4 +39,10 @@ def self.drop_table
   end
 
 
+def self.create(name, breed)
+   student = self.new(name, breed)
+   student.save
+   student
+ end
+
 end
