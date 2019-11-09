@@ -45,6 +45,12 @@ def self.create(name, breed)
    dog
  end
 
+
+ def self.find_by_name(name)
+  sql = "SELECT * FROM dogs WHERE name = ?"
+  DB[:conn].execute(sql, name).map { |row| new_from_db(row) }.first
+end
+
  def update
   sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
   DB[:conn].execute(sql, self.name, self.breed, self.id)
