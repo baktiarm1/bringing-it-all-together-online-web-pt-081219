@@ -39,8 +39,8 @@ def self.drop_table
   end
 
 
-def self.create(name, breed)
-   dog = self.new(name, breed)
+def self.create(hash)
+   dog = self.new(hash)
    dog.save
    dog
  end
